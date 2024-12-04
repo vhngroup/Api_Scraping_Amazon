@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Pagina de inicio {% endblock %}
+{% block content %}
+    {% if data == none %}
+        {%block header %}
+            <h2>Debe ingresar un parametro de busqueda</h2>
+        {%endblock%}
+    {%else%}
+            <h2>Se han encontrado las siguientes urls</h2>
+        <ul>
+            {% for url, nombre in scraping %}
+                <li class="lista_items"><a href="{{url}}" target="_blank">{{nombre}}</a></li>
+                <br>
+            {%endfor%}
+        </ul>
+        <p>Se listan los primeros cinco (5) resultados</p>
+    {%endif%}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Pagina de inicio {% endblock %}
+{% block content %}
+    {%block header %} 
+        <h2>Buscar Producto en Amazon</h2>
+    {% endblock %}
+    </form>
+    <form action="{{url_for('search_amazon_redirect')}}" method="get" >
+        <label for="">Por favor ingrese el nombre del producto a buscar</label>
+        <input type="text" id="searchInput" name="query" placeholder="Ingrese su búsqueda" required>
+        <button type="submit" id="buscar">Buscar</button>
+    </form>
+{% endblock %}
